@@ -15,6 +15,7 @@ class Detail extends React.Component {
   }
 
   render() {
+    console.log("details props", this.props);
     return (
       <div className="Detail">
         <header className="Detail-header">
