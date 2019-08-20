@@ -21,7 +21,6 @@ class People extends React.Component {
 
     return (
       <div className="People">
-        <button onClick={handleClickSection("categories")}>back</button>
         <div className="Table-header">
           <div className="Image-header"></div>
           <div className="Name">Name</div>

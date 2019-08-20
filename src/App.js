@@ -27,6 +27,11 @@ class App extends React.Component {
     const { section, data } = this.state;
     return (
       <div className="App">
+        <div className="App-header-wrapper">
+          <div className="App-header">
+            <div className="Home-link" onClick={() => this.setState({ section: "categories" })}>Home</div>
+          </div>
+        </div>
         {section === "people" &&
           <People handleClickSection={this.handleClickSection} />
         }
