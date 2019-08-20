@@ -1,0 +1,49 @@
+.Categories {
+  text-align: center;
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: black;
+}
+
+
+.Title {
+  font-size: 30px;
+  font-weight: 700;
+  height: 50px;
+}
+
+.Subtitle {
+  font-size: 22px;
+  height: 50px;
+}
+
+.Sections{
+  display: flex;
+  max-width: 100%;
+  width: 900px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.Section {
+  flex-direction: column;
+  background-color: #f2f2f2;
+  width: 200px;
+  height: 150px;
+  display: flex;
+  font-size: 18px;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  border: 2px solid #f2f2f2;
+  border-radius: 5px;
+}
+.Section:hover {
+  cursor: pointer;
+  border: 2px solid purple;
+}

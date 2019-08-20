@@ -10,16 +10,12 @@ class Events extends React.Component {
 
   componentDidMount() {
   }
-  handleClickEvents = () => {
-    this.setState({ listPage: true })
-  }
+
   
   render() {
     return (
       <div className="Events">
-        <header className="Events-header">
             Events
-        </header>
       </div>
     );
   }

@@ -15,50 +15,29 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    /* font-size: calc(10px + 2vmin); */
-    font-size: 18px;
+    font-size: calc(10px + 2vmin);
     color: white;
     padding: 0px 20px;
   }
 
-    h1 {
-        width: 50%;
-        text-align: left;
-    }
-    .Dog-buttons {
-        width: 50%;
-        display: flex;
-        justify-content: flex-end;
-    }
-    
-    .Dog-buttons .button {
-        flex-grow: 1;
-        border-radius: 4px;
-        border: solid 1px white;
-        line-height:34px;
-        height: 36px;
-        margin: 0px 20px;
-    }
+  h1 {
+      flex-grow: 1;
+      text-align: left;
+  }
+  .Dog-buttons {
+      flex-grow: 1;
+      text-align: right;
+  }
+  
+  .Dog-buttons button {
+      
+      display: flex;
+      flex-grow: 1;
+  }
 
   .Dog-link {
     color: #61dafb;
   }
-
-  .Dog-details {
-    background: rgb(95, 95, 168);
-    min-height: calc(100vh - 70px);
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    padding: 20px 0;
-  }
-    .Dog-box {
-      height: 350px;
-      width: 350px;
-      margin: 20px 20px;
-      background-color: rgba(255,255,255, 0.2);
-      
-    }
   
   @keyframes Dog-logo-spin {
     from {

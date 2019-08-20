@@ -10,16 +10,11 @@ class Topics extends React.Component {
 
   componentDidMount() {
   }
-  handleClickTopics = () => {
-    this.setState({ listPage: true })
-  }
-  
+
   render() {
     return (
       <div className="Topics">
-        <header className="Topics-header">
             Topics
-        </header>
       </div>
     );
   }
