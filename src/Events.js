@@ -1,7 +1,7 @@
 import React from 'react';
-import './List.css';
+import './Events.css';
 
-class List extends React.Component {
+class Events extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -10,19 +10,19 @@ class List extends React.Component {
 
   componentDidMount() {
   }
-  handleClickList = () => {
+  handleClickEvents = () => {
     this.setState({ listPage: true })
   }
   
   render() {
     return (
-      <div className="List">
-        <header className="List-header">
-            List
+      <div className="Events">
+        <header className="Events-header">
+            Events
         </header>
       </div>
     );
   }
 }
 
-export default List;
+export default Events;

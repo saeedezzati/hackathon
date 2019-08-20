@@ -1,45 +1,90 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import List from './List';
+import People from './People';
+// import Dogs from './Dogs';
+import Groups from './Groups';
+import Events from './Events';
+import Topics from './Topics';
+import Snacks from './Snacks';
 import Detail from './Detail';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      detailPage: false,
-      listPage: false
+      section: "categories",
     }
   }
 
   componentDidMount() {
   }
-  handleClickList = () => {
-    this.setState({ listPage: true })
-  }
-  handleClickDetail = () => {
-    this.setState({ detailPage: true })
+  handleClickSection = section => () => {
+    this.setState({ section })
   }
   render() {
-    const { detailPage, listPage } = this.state;
+    const { section } = this.state;
     return (
       <div className="App">
-        {detailPage &&
-          <Detail />
+        {section === "people" &&
+          <People handleClickSection={this.handleClickSection}/>
         }
-        {listPage &&
-          <List />
+        {section === "groups" &&
+          <Groups handleClickSection={this.handleClickSection}/>
         }
-        {!listPage && !detailPage &&
+        {section === "events" &&
+          <Events handleClickSection={this.handleClickSection}/>
+        }
+        {section === "topics" &&
+          <Topics handleClickSection={this.handleClickSection}/>
+        }
+        {section === "snacks" &&
+          <Snacks handleClickSection={this.handleClickSection}/>
+        }
+        {section === "detail" &&
+          <Detail handleClickSection={this.handleClickSection}/>
+        }
+        {section==="categories" && 
           <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <button onClick={this.handleClickList}>
-              List
-            </button>
-            <button onClick={this.handleClickDetail}>
-              Detail
-            </button>
+            <div className="Title">Welcome Home, A-Listers!</div>
+            <div className="Subtitle">What are you looking for today?</div>
+            <div className="Sections">
+              <div className="Section" onClick={this.handleClickSection("people")}>
+                <span aria-label='people' role='img'>
+                  💁🏽‍♀️
+                </span>
+                People
+              </div>
+              <div className="Section" onClick={this.handleClickSection("dogs")}>
+                <span aria-label='dogs' role='img'>
+                  🐶
+              </span>
+                Dogs
+              </div>
+              <div className="Section" onClick={this.handleClickSection("groups")}>
+                <span aria-label='groups' role='img'>
+                  🤝
+              </span>
+                Groups
+              </div>
+              <div className="Section" onClick={this.handleClickSection("events")}>
+                <span aria-label='events' role='img'>
+                  📆️
+              </span>
+                Events
+              </div>
+              <div className="Section" onClick={this.handleClickSection("topics")}>
+                <span aria-label='topics' role='img'>
+                  💡
+                </span>
+                Topics
+              </div>
+              <div className="Section" onClick={this.handleClickSection("snacks")}>
+                <span aria-label='snacks' role='img'>
+                  🍿
+              </span>
+                Snack Request
+              </div>
+            </div>
           </header>
         }
       </div>
