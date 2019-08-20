@@ -1,11 +1,36 @@
 .Quiz {
   text-align: center;
   background-color: white;
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: black;
+  font-size: 14px;
+  color: #333333;
+}
+
+.Quiz h1 {
+  text-align: center;
+  font-size: 30px;
+}
+
+.Quiz-question {
+  font-size: 20px;
+}
+
+.Quiz-answers {
+  margin-top: 46px;
+  display: flex;
+  flex-direction: row;
+}
+
+.Quiz-button {
+  width: 161px;
+  height: 68px;
+  line-height: 68px;
+  border-radius: 4px;
+  background-color: #f7f7f7;
+  font-size: 14px;
+  margin: 0px 34px;
 }

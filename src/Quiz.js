@@ -14,7 +14,16 @@ class Quiz extends React.Component {
   render() {
     return (
       <div className="Quiz">
-        Quiz
+        <h1>Let's learn more about Meghan</h1>
+        <div className = "Quiz-question">Does Meghan have a dog?</div>
+        <div className = "Quiz-answers">
+          <div className = "Quiz-button">
+            Yes! 💜
+          </div>
+          <div className = "Quiz-button">
+            No ☹️
+          </div>
+        </div>
       </div>
     );
   }
