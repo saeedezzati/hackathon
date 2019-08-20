@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import People from './People';
-// import Dogs from './Dogs';
+import Dogs from './Dogs';
 import Groups from './Groups';
 import Events from './Events';
 import Topics from './Topics';
@@ -27,6 +27,9 @@ class App extends React.Component {
       <div className="App">
         {section === "people" &&
           <People handleClickSection={this.handleClickSection}/>
+        }
+        {section === "dogs" &&
+          <Dogs handleClickSection={this.handleClickSection}/>
         }
         {section === "groups" &&
           <Groups handleClickSection={this.handleClickSection}/>
