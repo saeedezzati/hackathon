@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from "axios";
 import './App.css';
 import People from './People';
 import Dogs from './Dogs';
@@ -10,7 +9,6 @@ import Snacks from './Snacks';
 import Detail from './Detail';
 import Categories from './Categories';
 
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -20,16 +18,7 @@ class App extends React.Component {
     }
   }
 
-  async componentDidMount() {
-    const db = axios.create({
-      baseURL: "https://api.sheety.co/de9ad1a5-47a2-422c-8423-c8ed4bbb4c82",
-      responseType: "json"
-    });
-    db.get("/").then((response) => {
-      this.setState({
-        data: response
-      });
-    });
+  componentDidMount() {
   }
   handleClickSection = (section, data = "") => () => {
     this.setState({ section })
@@ -44,13 +33,10 @@ class App extends React.Component {
           </div>
         </div>
         {section === "people" &&
-          <People handleClickSection={this.handleClickSection} peopleObj={this.state.data}/>
+          <People handleClickSection={this.handleClickSection} />
         }
         {section === "dogs" &&
           <Dogs handleClickSection={this.handleClickSection} />
-        }
-        {section === "dogs" &&
-          <Dogs handleClickSection={this.handleClickSection}/>
         }
         {section === "groups" &&
           <Groups handleClickSection={this.handleClickSection} />
