@@ -1,7 +1,7 @@
 import React from 'react';
-import './Topics.css';
+import './Quiz.css';
 
-class Topics extends React.Component {
+class Quiz extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,11 +13,11 @@ class Topics extends React.Component {
 
   render() {
     return (
-      <div className="Topics">
-            Topics
+      <div className="Quiz">
+        Quiz
       </div>
     );
   }
 }
 
-export default Topics;
+export default Quiz;

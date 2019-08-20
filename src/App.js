@@ -5,7 +5,7 @@ import People from './People';
 import Dogs from './Dogs';
 import Groups from './Groups';
 import Events from './Events';
-import Topics from './Topics';
+import Quiz from './Quiz';
 import Snacks from './Snacks';
 import Detail from './Detail';
 import Categories from './Categories';
@@ -16,7 +16,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       section: "categories",
-      data: null
+      data: ""
     }
   }
 
@@ -31,15 +31,18 @@ class App extends React.Component {
       });
     });
   }
-
-  handleClickSection = section => () => {
-    console.log("section", section);
+  handleClickSection = (section, data = "") => () => {
     this.setState({ section })
   }
   render() {
-    const { section } = this.state;
+    const { section, data } = this.state;
     return (
       <div className="App">
+        <div className="App-header-wrapper">
+          <div className="App-header">
+            <div className="Home-link" onClick={() => this.setState({ section: "categories" })}>Home</div>
+          </div>
+        </div>
         {section === "people" &&
           <People handleClickSection={this.handleClickSection} peopleObj={this.state.data}/>
         }
@@ -55,19 +58,19 @@ class App extends React.Component {
         {section === "events" &&
           <Events handleClickSection={this.handleClickSection} />
         }
-        {section === "topics" &&
-          <Topics handleClickSection={this.handleClickSection} />
+        {section === "quiz" &&
+          <Quiz handleClickSection={this.handleClickSection} />
         }
         {section === "snacks" &&
           <Snacks handleClickSection={this.handleClickSection} />
         }
         {section === "detail" &&
-          <Detail handleClickSection={this.handleClickSection} detailObj={this.state.data.data[0]}/>
+          <Detail handleClickSection={this.handleClickSection} detailObj={data} />
         }
         {section === "categories" &&
           <Categories handleClickSection={this.handleClickSection} />
         }
-          
+
       </div>
     );
   }
