@@ -21,6 +21,9 @@ class People extends React.Component {
 
     return (
       <div className="People">
+        <div className="People-count">
+          {`${peopleList.length} People`}
+        </div>
         <div className="Table-header">
           <div className="Image-header"></div>
           <div className="Name">Name</div>

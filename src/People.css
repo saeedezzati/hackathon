@@ -9,7 +9,12 @@
   margin-top: 80px;
 }
 
-
+.People-count{
+  width: 1200px;
+  font-size: 20px;
+  text-align: left;
+  height: 40px;
+}
 .Table-header {
   padding: 10px;
   background-color: #f2f2f2;
