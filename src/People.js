@@ -5,19 +5,45 @@ class People extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      peopleList: []
     }
   }
 
   componentDidMount() {
+    fetch('https://api.sheety.co/de9ad1a5-47a2-422c-8423-c8ed4bbb4c82')
+      .then(response => response.json())
+      .then(data => this.setState({ peopleList: data }));
   }
 
-  
   render() {
     const { handleClickSection } = this.props;
+    const { peopleList } = this.state;
+
     return (
       <div className="People">
-            People
-            <button onClick={handleClickSection("categories")}>back</button>
+        <button onClick={handleClickSection("categories")}>back</button>
+        <div className="Table-header">
+          <div className="Image-header"></div>
+          <div className="Name">Name</div>
+          <div className="Person-title">Title</div>
+          <div className="Department">Department</div>
+          <div className="Location">Location</div>
+          <div className="Favorite-emoji">Favorite Emoji</div>
+          <div className="Take-quiz">Quiz</div>
+        </div>
+        {peopleList.map(person => {
+          return (
+            <div className="Table-row" key={person.name} onClick={handleClickSection("detail", person)}>
+              <img className="Image" src={person.image ? person.image : "https://image.flaticon.com/icons/svg/163/163801.svg"} alt={person.name} />
+              <div className="Name">{person.name}</div>
+              <div className="Person-title">{person.title}</div>
+              <div className="Department">{person.department}</div>
+              <div className="Location">{person.workLocation}</div>
+              <div className="Favorite-emoji">{person.mostUsedEmoji}</div>
+              <div className="Take-quiz"></div>
+            </div>
+          )
+        })}
       </div>
     );
   }
