@@ -1,7 +1,7 @@
 import React from 'react';
-import './Dog.css';
+import './Dogs.css';
 
-class Dog extends React.Component {
+class Dogs extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,4 +29,4 @@ class Dog extends React.Component {
   }
 }
 
-export default Dog;
+export default Dogs;

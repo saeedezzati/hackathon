@@ -10,16 +10,11 @@ class Groups extends React.Component {
 
   componentDidMount() {
   }
-  handleClickGroups = () => {
-    this.setState({ listPage: true })
-  }
-  
+
   render() {
     return (
       <div className="Groups">
-        <header className="Groups-header">
             Groups
-        </header>
       </div>
     );
   }

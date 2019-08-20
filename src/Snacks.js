@@ -10,16 +10,11 @@ class Snacks extends React.Component {
 
   componentDidMount() {
   }
-  handleClickSnacks = () => {
-    this.setState({ listPage: true })
-  }
   
   render() {
     return (
       <div className="Snacks">
-        <header className="Snacks-header">
             Snacks
-        </header>
       </div>
     );
   }

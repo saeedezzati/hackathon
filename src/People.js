@@ -10,18 +10,14 @@ class People extends React.Component {
 
   componentDidMount() {
   }
-  handleClickPeople = () => {
-    this.setState({ listPage: true })
-  }
+
   
   render() {
     const { handleClickSection } = this.props;
     return (
       <div className="People">
-        <header className="People-header">
             People
             <button onClick={handleClickSection("categories")}>back</button>
-        </header>
       </div>
     );
   }
