@@ -33,4 +33,10 @@
   background-color: #f7f7f7;
   font-size: 14px;
   margin: 0px 34px;
+  border: solid 2px #f7f7f7;
+}
+
+.Quiz-button:hover {
+  cursor: pointer;
+  border: solid 2px #8333d6;
 }

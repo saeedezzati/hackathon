@@ -46,6 +46,11 @@
         color: #ffffff;
     }
 
+    .Dog-buttons .button:hover {
+      cursor: pointer;
+      background-color: #5702AF;
+    }
+
   .Dog-link {
     color: #61dafb;
   }
@@ -67,11 +72,13 @@
       height: 328px;
       border-radius: 10px;
       margin: 32px;
+      border: solid 2px #ffffff;
       box-shadow: 0 10px 30px 0 #e6e6e6;      
     }
 
     .Dog-box:hover {
       cursor: pointer;
+      border: solid 2px #8333d6;
     }
 
       img {
