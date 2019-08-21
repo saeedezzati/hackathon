@@ -24,7 +24,7 @@ class People extends React.Component {
       ? peopleList.filter(person =>
         [person.name, person.title, person.department, person.workLocation, person.mostUsedEmoji].join(",").toLowerCase().includes(search)
       ).filter(person =>
-        group === "" || (person.talkToMeAbout && person.talkToMeAbout.toLowerCase().includes(group))
+        group === "" || (person.talkToMeAbout && person.talkToMeAbout.toLowerCase().includes(group.toLowerCase()))
       )
       : []
     return (

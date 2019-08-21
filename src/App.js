@@ -24,7 +24,7 @@ class App extends React.Component {
   }
   handleClickSection = (section, data = "") => () => {
     console.log("section: ", section, "data: ", data);
-    this.setState({ section, data, search:"" })
+    this.setState({ section, data, search:"", group: "" })
   }
 
   handleClickGroup = (section, group) => {
