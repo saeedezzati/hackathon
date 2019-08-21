@@ -1,7 +1,7 @@
 .Quiz {
   text-align: center;
   background-color: white;
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 180px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,7 +28,10 @@
 .Quiz-button {
   width: 161px;
   height: 68px;
-  line-height: 68px;
+  /* line-height: 68px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 4px;
   background-color: #f7f7f7;
   font-size: 14px;
