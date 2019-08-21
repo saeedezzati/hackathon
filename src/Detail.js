@@ -59,11 +59,11 @@ class Detail extends React.Component {
       <div className="Detail">
         <div className="Detail-sidebar">
           <div className="Detail-name">
-            {`${detailObj.name} ${detailObj.mostUsedEmoji}`}
+            {`${detailObj.name} ${detailObj.mostUsedEmoji || "😀"}`}
           </div>
           <img
             className="Detail-person-img"
-            src={detailObj.image}
+            src={detailObj.image || "https://image.flaticon.com/icons/svg/163/163801.svg"}
             alt="Person"
             width="290"
             height="290"
