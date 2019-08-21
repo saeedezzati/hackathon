@@ -43,3 +43,12 @@
   cursor: pointer;
   border: solid 2px #8333d6;
 }
+
+.Quiz-button.correct {
+  background-color: #eee6f6;;
+}
+
+.Quiz-button.wrong {
+  border: solid 1px #fad1da;
+  background-color: #fad1da;
+}
