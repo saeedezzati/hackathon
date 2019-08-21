@@ -1,5 +1,7 @@
 .Dog {
-
+  font-family: HelveticaNeue;
+  color: #333333;
+  background-color: #ffffff;
 }
   
   .Dog-logo {
@@ -9,21 +11,22 @@
   }
   
   .Dog-header {
-    background-color: #282c34;
-    height: 70px;
+    height: 60px;
+    /* border-bottom: solid 1px #e6e6e6; */
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     /* font-size: calc(10px + 2vmin); */
     font-size: 18px;
-    color: white;
-    padding: 0px 20px;
+    padding: 32px;
   }
 
     h1 {
         width: 50%;
         text-align: left;
+        font-size: 30px;
+        font-weight: 500;
     }
     .Dog-buttons {
         width: 50%;
@@ -32,12 +35,20 @@
     }
     
     .Dog-buttons .button {
-        flex-grow: 1;
-        border-radius: 4px;
-        border: solid 1px white;
-        line-height:34px;
-        height: 36px;
-        margin: 0px 20px;
+        width: 183px;
+        height: 44px;
+        border-radius: 6px;
+        background-color: #8333d6;
+        line-height:44px;
+        font-family: HelveticaNeue;
+        font-size: 14px;
+        font-weight: 500;
+        color: #ffffff;
+    }
+
+    .Dog-buttons .button:hover {
+      cursor: pointer;
+      background-color: #5702AF;
     }
 
   .Dog-link {
@@ -45,20 +56,55 @@
   }
 
   .Dog-details {
-    background: rgb(95, 95, 168);
     min-height: calc(100vh - 70px);
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-wrap: wrap;
-    padding: 20px 0;
+  } 
+
+  .Dog-details:after {
+    content: '';
+    flex: auto;
   }
+
     .Dog-box {
-      height: 350px;
-      width: 350px;
-      margin: 20px 20px;
-      background-color: rgba(255,255,255, 0.2);
-      
+      width: 275px;
+      height: 328px;
+      border-radius: 10px;
+      margin: 32px;
+      border: solid 2px #ffffff;
+      box-shadow: 0 10px 30px 0 #e6e6e6;      
     }
+
+    .Dog-box:hover {
+      cursor: pointer;
+      border: solid 2px #8333d6;
+    }
+
+      img {
+        width: 275px;
+        height: 265px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        object-fit: cover;
+      }
+      
+      .Dog-info {
+        display: flex;
+        flex-direction: column;
+      }
+        
+        .Dog-info-header {
+          margin-top: 10px;
+          padding: 0px 16px;
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .Dog-owner {
+          padding: 0px 16px;
+          text-align: left;
+        }
   
   @keyframes Dog-logo-spin {
     from {

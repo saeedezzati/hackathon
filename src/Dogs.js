@@ -1,55 +1,48 @@
 import React from 'react';
 import './Dogs.css';
-var dogPic = {
-  backgroundImage: 'url("https://res.cloudinary.com/apartmentlist/image/upload/v1566267398/Hackathon/home/berkay-gumustekin-ngqyo2AYYnE-unsplash.jpg")',
-  backgroundSize: 'contain',
-  backgroundPosition: 'center',
-  backgroundRepeat: 'no-repeat'
-};
+
 class Dogs extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      dogList: []
     }
   }
 
   componentDidMount() {
+    fetch('https://api.sheety.co/1dd8774f-b626-4446-8c7d-86f5cd5624ee')
+      .then(response => response.json())
+      .then(data => this.setState({ dogList: data }));
   }
-  handleClickList = () => {
-    this.setState({ listPage: true })
-  }
-
 
 
   render() {
+    const { handleClickSection } = this.props;
+    const { dogList } = this.state;
+
     return (
       <div className="Dog">
         <header className="Dog-header">
-          <h1>Dogs</h1>
+          <h1>{dogList.length} Dogs</h1>
           <div className = "Dog-buttons">
             <div className = "button">Sign up to walk</div>
-            <div className = "button">Add a new Doggo</div>
-        </div>
+          </div>
         </header>
         <div className="Dog-details">
-          <div className="Dog-box" style={dogPic}>
-          </div>
-          <div className="Dog-box" style={dogPic}>
-          </div>
-          <div className="Dog-box" style={dogPic}>
-          </div>
-          <div className="Dog-box" style={dogPic}>
-          </div>
-          <div className="Dog-box" style={dogPic}>
-          </div>
-          <div className="Dog-box" style={dogPic}>
-          </div>
-          <div className="Dog-box" style={dogPic}>
-          </div>
-          <div className="Dog-box" style={dogPic}>
-          </div>
-          <div className="Dog-box" style={dogPic}>
-          </div>
+          {dogList.map(dog => {
+            return (
+              <div className="Dog-box" onClick={handleClickSection("detail", dog)}>
+                <img alt="doggies!" src={dog.profilePhoto}></img>
+                <div className="Dog-info">
+                  <div className ="Dog-info-header">
+                    <span>{dog.dogName}</span>
+                    <span>{dog.officeLocation}</span>
+                  </div>
+                  <div className ="Dog-owner">{dog.owner}</div>
+                </div>
+              </div>
+            )
+          })}
         </div>
       </div>
     );
