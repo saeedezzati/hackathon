@@ -16,13 +16,21 @@ class People extends React.Component {
   }
 
   render() {
-    const { handleClickSection, search } = this.props;
+    const { handleClickSection, search, group } = this.props;
     const { peopleList } = this.state;
+    debugger;
     
+    const filteredPeopleList = peopleList.length > 0
+      ? peopleList.filter(person =>
+        [person.name, person.title, person.department, person.workLocation, person.mostUsedEmoji].join(",").toLocaleLowerCase().includes(search)
+      ).filter(person =>
+        person.talkToMeAbout.length>0 && person.talkToMeAbout.includes(group)
+      )
+      : []
     return (
       <div className="People">
         <div className="People-count">
-          {`${peopleList.length} People`}
+          {`${filteredPeopleList.length} People`}{group!=="" ? `in ${group}` : ""}
         </div>
         <strong className="Table-header">
           <div className="Image-header"></div>
@@ -33,10 +41,7 @@ class People extends React.Component {
           <div className="Favorite-emoji">Favorite Emoji</div>
           <div className="Take-quiz">Quiz</div>
         </strong>
-        {peopleList.filter(person => {
-          console.log([person.name, person.title, person.department, person.workLocation].join(","));
-          return [person.name, person.title, person.department, person.workLocation, person.mostUsedEmoji].join(",").toLocaleLowerCase().includes(search)
-        }).map((person,index) => {
+        {filteredPeopleList.map((person,index) => {
           return (
             <div className="Table-row" key={index} onClick={handleClickSection("detail", person)}>
               <img className="Image" src={person.image ? person.image : "https://image.flaticon.com/icons/svg/163/163801.svg"} alt={person.name} />

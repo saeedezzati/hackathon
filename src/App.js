@@ -15,7 +15,8 @@ class App extends React.Component {
     this.state = {
       section: "categories",
       data: "",
-      search: ""
+      search: "",
+      group:""
     }
   }
 
@@ -26,7 +27,7 @@ class App extends React.Component {
     this.setState({ section, data })
   }
   render() {
-    const { section, data, search } = this.state;
+    const { section, data, search, group } = this.state;
     return (
       <div className="App">
         <div className="App-header-wrapper">
@@ -40,7 +41,7 @@ class App extends React.Component {
           </div>
         </div>
         {section === "people" &&
-          <People handleClickSection={this.handleClickSection} search={search}/>
+          <People handleClickSection={this.handleClickSection} search={search} group={group}/>
         }
         {section === "dogs" &&
           <Dogs handleClickSection={this.handleClickSection} />
