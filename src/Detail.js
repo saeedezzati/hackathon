@@ -14,6 +14,15 @@ class Detail extends React.Component {
     this.setState({ listPage: true })
   }
 
+  getCSV = (selector) => {
+    let selectorArray = [];
+    if (this.props.detailObj[selector]) {
+      selectorArray = this.props.detailObj[selector].split(", ");
+      console.log("photos", selector);
+    }
+    return selectorArray;
+  }
+
   getPetPictures = () => {
     const photoArray = this.props.detailObj.petPhotos.split(", ");
     console.log("photos", photoArray);
@@ -33,6 +42,19 @@ class Detail extends React.Component {
   render() {
     const { detailObj } = this.props;
     console.log("details props", this.props);
+    const ttma = this.getCSV("talkToMeAbout");
+    const ttmaElements = ttma.map((group) => {
+      return (
+        <div 
+          className="Detail-ttma"
+          onClick={() => {
+            this.props.handleClickGroup("people", group);
+          }}
+        >
+          {group}
+        </div>
+      )
+    });
     return (
       <div className="Detail">
         <div className="Detail-sidebar">
@@ -75,7 +97,7 @@ class Detail extends React.Component {
           <div className="Detail-section">
             <div className="Detail-header padding-left-20">Talk To Me About</div>
             <div className="Detail-line"></div>
-            <div>{`Talking Points: ${detailObj.talkToMeAbout}`}</div>
+            <div className="flex-parent">{ttmaElements}</div>
           </div>
           <div className="Detail-section">
             <div className="Detail-header padding-left-20">Office Info</div>

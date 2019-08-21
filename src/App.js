@@ -26,6 +26,10 @@ class App extends React.Component {
     console.log("section: ", section, "data: ", data);
     this.setState({ section, data, search:"" })
   }
+
+  handleClickGroup = (section, group) => {
+    this.setState({ section, group });
+  }
   render() {
     const { section, data, search, group } = this.state;
     return (
@@ -59,7 +63,12 @@ class App extends React.Component {
           <Snacks handleClickSection={this.handleClickSection} />
         }
         {section === "detail" &&
-          <Detail handleClickSection={this.handleClickSection} detailObj={data} />
+          <Detail 
+            handleClickSection={this.handleClickSection} 
+            handleClickGroup={this.handleClickGroup}
+            detailObj={data} 
+
+          />
         }
         {section === "categories" &&
           <Categories handleClickSection={this.handleClickSection} />
