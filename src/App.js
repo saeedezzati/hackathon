@@ -24,7 +24,7 @@ class App extends React.Component {
   }
   handleClickSection = (section, data = "") => () => {
     console.log("section: ", section, "data: ", data);
-    this.setState({ section, data })
+    this.setState({ section, data, search:"" })
   }
   render() {
     const { section, data, search, group } = this.state;
@@ -36,7 +36,7 @@ class App extends React.Component {
               Home
             </div>
             {section === "people" &&
-              <input placeholder="Search" className="Search-box" value={search} onChange={e => this.setState({ search: e.target.value })}/>
+              <input autofocus="true" placeholder="Search" className="Search-box" value={search} onChange={e => this.setState({ search: e.target.value })}/>
             }
           </div>
         </div>
