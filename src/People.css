@@ -17,7 +17,7 @@
 }
 .Table-header {
   padding: 10px;
-  background-color: #f2f2f2;
+  background-color: #e0e0e0;
   height: 50px;
   width: 1200px;
   display: flex;
@@ -48,7 +48,7 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  border: 1px solid black;
+  border: 2px solid #f7f7f7;
 }
 .Name{
   width: 200px;
@@ -63,11 +63,31 @@
 }
 .Location{
   width: 200px;
-
 }
 .Favorite-emoji{
   width: 100px;
 }
+/* .Tags {
+  width: 350px;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 100%;
+}
+.Tag {
+  margin: 5px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding: 0 5px;
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 14px;
+} */
 .Take-quiz{
   width: 100px;
 }

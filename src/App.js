@@ -14,7 +14,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       section: "categories",
-      data: ""
+      data: "",
+      search: ""
     }
   }
 
@@ -24,16 +25,21 @@ class App extends React.Component {
     this.setState({ section })
   }
   render() {
-    const { section, data } = this.state;
+    const { section, data, search } = this.state;
     return (
       <div className="App">
         <div className="App-header-wrapper">
           <div className="App-header">
-            <div className="Home-link" onClick={() => this.setState({ section: "categories" })}>Home</div>
+            <div className="Home-link" onClick={() => this.setState({ section: "categories" })}>
+              Home
+            </div>
+            {section === "people" &&
+              <input placeholder="Search" className="Search-box" value={search} onChange={e => this.setState({ search: e.target.value })}/>
+            }
           </div>
         </div>
         {section === "people" &&
-          <People handleClickSection={this.handleClickSection} />
+          <People handleClickSection={this.handleClickSection} search={search}/>
         }
         {section === "dogs" &&
           <Dogs handleClickSection={this.handleClickSection} />

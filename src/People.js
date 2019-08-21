@@ -16,15 +16,15 @@ class People extends React.Component {
   }
 
   render() {
-    const { handleClickSection } = this.props;
+    const { handleClickSection, search } = this.props;
     const { peopleList } = this.state;
-
+    
     return (
       <div className="People">
         <div className="People-count">
           {`${peopleList.length} People`}
         </div>
-        <div className="Table-header">
+        <strong className="Table-header">
           <div className="Image-header"></div>
           <div className="Name">Name</div>
           <div className="Person-title">Title</div>
@@ -32,16 +32,27 @@ class People extends React.Component {
           <div className="Location">Location</div>
           <div className="Favorite-emoji">Favorite Emoji</div>
           <div className="Take-quiz">Quiz</div>
-        </div>
-        {peopleList.map(person => {
+        </strong>
+        {peopleList.filter(person => {
+          console.log([person.name, person.title, person.department, person.workLocation].join(","));
+          return [person.name, person.title, person.department, person.workLocation, person.mostUsedEmoji].join(",").toLocaleLowerCase().includes(search)
+        }).map((person,index) => {
           return (
-            <div className="Table-row" key={person.name} onClick={handleClickSection("detail", person)}>
+            <div className="Table-row" key={index} onClick={handleClickSection("detail", person)}>
               <img className="Image" src={person.image ? person.image : "https://image.flaticon.com/icons/svg/163/163801.svg"} alt={person.name} />
               <div className="Name">{person.name}</div>
               <div className="Person-title">{person.title}</div>
               <div className="Department">{person.department}</div>
               <div className="Location">{person.workLocation}</div>
               <div className="Favorite-emoji">{person.mostUsedEmoji}</div>
+              {/*<div className="Tags">
+                {person.talkToMeAbout 
+                  ?person.talkToMeAbout.split(",").map(tag => 
+                  <div className="Tag">{tag}</div>
+                  )
+                  : <></>
+                }
+              </div>*/}
               <div className="Take-quiz"></div>
             </div>
           )
