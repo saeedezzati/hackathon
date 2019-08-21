@@ -27,14 +27,35 @@ class Quiz extends React.Component {
         const numQ = Math.floor(Math.random() * data.length);
         // Pick a number, if it corresponds to an answer, and doesn't already exist in array, add the index to randomEmployeeIndexes, and the answer 
         // to the randomized answers
-        const randomEmployeeIndexes = [Math.floor(Math.random() * Object.keys(data[0]).length), Math.floor(Math.random() * Object.keys(data[0]).length), Math.floor(Math.random() * Object.keys(data[0]).length), Math.floor(Math.random() * Object.keys(data[0]).length)];
-        const randomAnswers = randomEmployeeIndexes.map(element => data[numQ]["e"+element]);
+        var randomEmployeeIndexes = [];
+        var randomAnswers = [];
+        while (randomEmployeeIndexes.length < 4) {
+          var randomAnswer = this.returnRandomAnswer(numQ, data);
+          if (randomAnswer && randomAnswers.indexOf(randomAnswer.employeeAnswer) == -1) { // ie is not blank and answer isn't already in this set
+            randomEmployeeIndexes.push(randomAnswer.randomEmployeeNumber);
+            randomAnswers.push(randomAnswer.employeeAnswer);
+          }
+        }
+        // const randomEmployeeIndexes = [Math.floor(Math.random() * Object.keys(data[0]).length), Math.floor(Math.random() * Object.keys(data[0]).length), Math.floor(Math.random() * Object.keys(data[0]).length), Math.floor(Math.random() * Object.keys(data[0]).length)];
+        // const randomAnswers = randomEmployeeIndexes.map(element => data[numQ]["e"+element]);
         const correctA = Math.floor(Math.random() * 4);
         const employeeNumber = randomEmployeeIndexes[correctA];
         this.setState({ quizList: data, numQ: numQ, correctAnswer: correctA + 1, randomAnswers: randomAnswers, employeeNumber: employeeNumber })});
 
   }
 
+  returnRandomAnswer = (numQ, data) => {
+    // Pick a random employee
+    var randomEmployeeNumber = Math.floor(Math.random() * Object.keys(data[0]).length);
+    // Return their answer
+    var employeeAnswer = data[numQ]["e"+randomEmployeeNumber];
+    if (employeeAnswer == null) {
+      return false;
+    } else {
+      return { 'randomEmployeeNumber': randomEmployeeNumber, 'employeeAnswer': employeeAnswer };
+    }
+
+  };
 
   chooseAnswer = chosenAnswer => () => {
     this.setState({chosenAnswer: chosenAnswer});
