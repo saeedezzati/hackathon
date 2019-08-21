@@ -21,7 +21,8 @@ class App extends React.Component {
   componentDidMount() {
   }
   handleClickSection = (section, data = "") => () => {
-    this.setState({ section })
+    console.log("section: ", section, "data: ", data);
+    this.setState({ section, data })
   }
   render() {
     const { section, data } = this.state;
