@@ -69,7 +69,6 @@
 }
 .Detail-name {
   width: 214px;
-  height: 39px;
   font-family: HelveticaNeue;
   font-size: 30px;
   font-weight: 500;
@@ -77,6 +76,7 @@
   font-stretch: normal;
   line-height: normal;
   letter-spacing: normal;
+  overflow: hidden;
   color: #333333;
 }
 
