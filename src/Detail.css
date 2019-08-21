@@ -8,6 +8,11 @@
   padding-left: 20px;
 }
 
+.flex-parent {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .Detail-logo {
   animation: Detail-logo-spin infinite 20s linear;
   height: 40vmin;
@@ -102,6 +107,17 @@
   border-radius: 50%;
   border: 1px solid grey;
   margin-top: 10px;
+}
+
+.Detail-ttma {
+  width: 116px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: #EEE6F6;
+  flex: 1 0 21%; /* Only enough space for 4 items */
+  margin: 5px;
+  text-align: center;
+  line-height: 30px;
 }
 
 .Detail-person-info {
