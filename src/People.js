@@ -30,7 +30,7 @@ class People extends React.Component {
     return (
       <div className="People">
         <div className="People-count">
-          {`${filteredPeopleList.length} People`}{group !== "" ? `in ${group}` : ""}
+          {`${filteredPeopleList.length} People`}{group !== "" ? ` in ${group}` : ""}
         </div>
         <strong className="Table-header">
           <div className="Image-header"></div>
