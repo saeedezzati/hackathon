@@ -8,6 +8,7 @@ import Quiz from './Quiz';
 import Snacks from './Snacks';
 import Detail from './Detail';
 import Categories from './Categories';
+import Logo from './Apartment_List_Logo_RGB.png';
 
 class App extends React.Component {
   constructor(props) {
@@ -37,11 +38,40 @@ class App extends React.Component {
         <div className="App-header-wrapper">
           <div className="App-header">
             <div className="Home-link" onClick={() => this.setState({ section: "categories" })}>
-              Home
+              <img
+                src={Logo}
+                alt="logo"
+                width="200"
+                height="55"
+              />
             </div>
-            {section === "people" &&
-              <input autofocus="true" placeholder="Search" className="Search-box" value={search} onChange={e => this.setState({ search: e.target.value })}/>
-            }
+            <div className="Home-link">
+              <div className="App-header-link" onClick={() => this.setState({ section: "people" })}>
+                People
+              </div>
+              <div className="App-header-link" onClick={() => this.setState({ section: "dogs" })}>
+                Dogs
+              </div>
+              <div className="App-header-link" onClick={() => this.setState({ section: "groups" })}>
+                Groups
+              </div>
+              <div className="App-header-link" onClick={() => this.setState({ section: "snacks" })}>
+                Snacks
+              </div>
+              <div className="App-header-link" onClick={() => this.setState({ section: "quiz" })}>
+                Quiz
+              </div>
+            </div>
+            {/* {section === "people" &&
+              <input
+                className="Home-link" 
+                autofocus="true" 
+                placeholder="Search" 
+                className="Search-box" 
+                value={search} 
+                onChange={e => this.setState({ search: e.target.value })}
+              />
+            } */}
           </div>
         </div>
         {section === "people" &&
