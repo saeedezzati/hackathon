@@ -24,18 +24,24 @@ class Detail extends React.Component {
   }
 
   getPetPictures = () => {
-    const photoArray = this.props.detailObj.petPhotos.split(", ");
+    let images = [];
+    if (this.props.detailObj.petPhotos) {
+    let photoArray = this.props.detailObj.petPhotos.split(", ");
     console.log("photos", photoArray);
-    const images = photoArray.map((url) => {
+    images = photoArray.map((url) => {
       return (
-        <img
-          src={url}
-          alt="Pet"
-          width="250"
-          height="250"
-        />
+        <div className="margin-top-10"> 
+          <img
+            className="Detail-img margin-left-right-10"
+            src={url}
+            alt="Pet"
+            width="150"
+            height="150"
+          />
+        </div>
       )
     });
+    }
     return images;
   }
 
@@ -62,7 +68,7 @@ class Detail extends React.Component {
             {`${detailObj.name} ${detailObj.mostUsedEmoji || "😀"}`}
           </div>
           <img
-            className="Detail-person-img"
+            className="Detail-img margin-top-10"
             src={detailObj.image || "https://image.flaticon.com/icons/svg/163/163801.svg"}
             alt="Person"
             width="290"
@@ -77,7 +83,7 @@ class Detail extends React.Component {
           <div className="Detail-label">Office Location</div>
           <div className="Detail-text">{detailObj.workLocation}</div>
         </div>
-        <div className="Detail-info">
+        <div className="Detail-info Min-max-width">
           <div className="Detail-section">
             <div className="Detail-header padding-left-20">About</div>
             <div className="Detail-line"/>
@@ -105,7 +111,7 @@ class Detail extends React.Component {
             <div className="Detail-column padding-left-20">
               <div className="Detail-label">Favorite Food</div>
               <div className="Detail-text">Sample Text</div>
-              <div className="Detail-label">Allergiers</div>
+              <div className="Detail-label">Allergies</div>
               <div className="Detail-text">Sample Text</div>
             </div>
             <div className="Detail-column padding-left-20">
@@ -121,7 +127,7 @@ class Detail extends React.Component {
             <div className="Detail-column padding-left-20">
               <div className="Detail-label">Email</div>
               <div className="Detail-text">{"Sample Text"}</div>
-              <div className="Detail-label">Alergies</div>
+              <div className="Detail-label">Allergies</div>
               <div className="Detail-text">{"Sample Text"}</div>
             </div>
             <div className="Detail-column padding-left-20">
@@ -130,7 +136,16 @@ class Detail extends React.Component {
             </div>
           </div>
         </div>
-        
+        <div className="Detail-info width-172">
+          <div className="Detail-section">
+            <div className="Detail-header padding-left-20">Pets</div>
+            <div className="Detail-line"></div>
+            <div>
+          {this.getPetPictures()}
+        </div>
+          </div>
+          
+        </div>
         {/* <div>Pets</div>
         <div>
           {this.getPetPictures()}
