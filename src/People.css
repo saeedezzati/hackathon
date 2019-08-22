@@ -15,31 +15,40 @@
   text-align: left;
   height: 40px;
 }
+.Search-label{
+  font-size: 20px;
+  font-weight: 500;
 
+}
 .Search-box{
   width: 400px;
   height: 50px;
   padding: 0 10px;
+  margin-top: 16px;
+  margin-bottom: 24px;
+
 }
 
 .Table-header {
   padding: 10px;
-  background-color: #e0e0e0;
+  background-color: #210d36;
   height: 50px;
   width: 1200px;
-  display: flex;
-  border-bottom: 1px solid black;
+  display: flex;  
   align-items: center;
   justify-content: flex-start;
+  color: #fff
+
+
 }
 
 .Table-row {
   padding: 10px;
-  background-color: #f2f2f2;
+  background-color: #f7f7f7;
   height: 100px;
   width: 1200px;
   display: flex;
-  border: 2px solid #f7f7f7;
+  border: 2px solid #fff;
   align-items: center;
   justify-content: flex-start;
 }
@@ -72,7 +81,7 @@
   width: 200px;
 }
 .Favorite-emoji{
-  width: 100px;
+  width: 200px;
 }
 /* .Tags {
   width: 350px;

@@ -31,6 +31,9 @@ class People extends React.Component {
       : []
     return (
       <div className="People">
+        <div className="Search-label">
+          Who are you looking for?
+        </div>
         <div>
           <input
             autofocus="true" 
@@ -50,7 +53,6 @@ class People extends React.Component {
           <div className="Department">Department</div>
           <div className="Location">Location</div>
           <div className="Favorite-emoji">Favorite Emoji</div>
-          <div className="Take-quiz">Quiz</div>
         </strong>
         {filteredPeopleList.map((person, index) => {
           return (
