@@ -8,7 +8,7 @@ import Quiz from './Quiz';
 import Snacks from './Snacks';
 import Detail from './Detail';
 import Categories from './Categories';
-import Logo from './Apartment_List_Logo_RGB.png';
+var Logo = 'https://res.cloudinary.com/apartmentlist/image/upload/v1566510461/Hackathon/home/aparmtent_book.png';
 
 class App extends React.Component {
   constructor(props) {
@@ -42,7 +42,6 @@ class App extends React.Component {
                 src={Logo}
                 alt="logo"
                 width="200"
-                height="55"
               />
             </div>
             <div className="Home-link">
