@@ -65,7 +65,7 @@ class App extends React.Component {
             {/* {section === "people" &&
               <input
                 className="Home-link" 
-                autofocus="true" 
+                autoFocus={true}
                 placeholder="Search" 
                 className="Search-box" 
                 value={search} 
