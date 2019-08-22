@@ -138,6 +138,10 @@
   line-height: 30px;
 }
 
+.Detail-ttma:hover {
+  cursor: pointer;
+}
+
 .Detail-person-info {
   margin-top: 10px;
   text-align: left;

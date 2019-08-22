@@ -5,7 +5,8 @@ class People extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      peopleList: []
+      peopleList: [],
+      search: ""
     }
   }
 
@@ -16,7 +17,8 @@ class People extends React.Component {
   }
 
   render() {
-    const { handleClickSection, search, group } = this.props;
+    const { handleClickSection, group } = this.props;
+    const { search } = this.state;
     const { peopleList } = this.state;
 
     const filteredPeopleList = peopleList.length > 0
@@ -28,6 +30,15 @@ class People extends React.Component {
       : []
     return (
       <div className="People">
+        <div>
+          <input
+            autofocus="true" 
+            placeholder="Search" 
+            className="Search-box" 
+            value={search} 
+            onChange={e => this.setState({ search: e.target.value })}
+          />
+        </div>
         <div className="People-count">
           {`${filteredPeopleList.length} People`}{group !== "" ? ` in ${group}` : ""}
         </div>
