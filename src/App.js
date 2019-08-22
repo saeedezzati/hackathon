@@ -51,7 +51,9 @@ class App extends React.Component {
           <Dogs handleClickSection={this.handleClickSection} />
         }
         {section === "groups" &&
-          <Groups handleClickSection={this.handleClickSection} />
+          <Groups handleClickSection={this.handleClickSection}
+          handleClickGroup={this.handleClickGroup}
+          />
         }
         {section === "events" &&
           <Events handleClickSection={this.handleClickSection} />

@@ -1,11 +1,28 @@
 .Groups {
   text-align: center;
   background-color: white;
-  min-height: 100vh;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
   font-size: calc(10px + 2vmin);
   color: black;
+  padding: 30px;
+
+}
+.Group-button{
+  border: 2px solid purple;
+  border-radius: 4px;
+  margin: 10px;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.Group-button:hover{
+  cursor:pointer;
+  background-color: #eee6f6;
 }
