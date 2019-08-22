@@ -18,7 +18,6 @@ class People extends React.Component {
   render() {
     const { handleClickSection, search, group } = this.props;
     const { peopleList } = this.state;
-    debugger;
 
     const filteredPeopleList = peopleList.length > 0
       ? peopleList.filter(person =>
