@@ -30,7 +30,7 @@ class Detail extends React.Component {
     console.log("photos", photoArray);
     images = photoArray.map((url) => {
       return (
-        <div className="margin-top-10"> 
+        <div className="margin-top-10" onClick={handleClickSection("dog-detail", person)}> 
           <img
             className="Detail-img margin-left-right-10"
             src={url}
@@ -47,6 +47,7 @@ class Detail extends React.Component {
 
   render() {
     const { detailObj } = this.props;
+    const { handleClickSection} = this.props;
     console.log("details props", this.props);
     const ttma = this.getCSV("talkToMeAbout");
     const ttmaElements = ttma.map((group) => {
@@ -78,8 +79,8 @@ class Detail extends React.Component {
           <div className="Detail-text">{detailObj.title}</div>
           <div className="Detail-label">Department</div>
           <div className="Detail-text">{detailObj.department}</div>
-          <div className="Detail-label">Tenure</div>
-          <div className="Detail-text">{detailObj.tenure}</div>
+          <div className="Detail-label">Has been at AL longer than</div>
+          <div className="Detail-text Detail-label">{detailObj.tenure} of the current employees</div>
           <div className="Detail-label">Office Location</div>
           <div className="Detail-text">{detailObj.workLocation}</div>
         </div>
@@ -97,7 +98,7 @@ class Detail extends React.Component {
               <div className="Detail-label">Favorite TV Show</div>
               <div className="Detail-text">{detailObj.favouriteTVShow}</div>
               <div className="Detail-label">Who Would Play You In A Movie</div>
-              <div className="Detail-text">{"Sample Text"}</div>
+              <div className="Detail-text">{detailObj.whoWouldPlayYouInAMovie}</div>
             </div>
           </div>
           <div className="Detail-section">
@@ -109,16 +110,12 @@ class Detail extends React.Component {
             <div className="Detail-header padding-left-20">Office Info</div>
             <div className="Detail-line"></div>
             <div className="Detail-column padding-left-20">
-              <div className="Detail-label">Favorite Food</div>
-              <div className="Detail-text">Sample Text</div>
-              <div className="Detail-label">Allergies</div>
-              <div className="Detail-text">Sample Text</div>
+              <div className="Detail-label">Favorite Snack</div>
+              <div className="Detail-text">{detailObj.favoriteSnack}</div>
             </div>
             <div className="Detail-column padding-left-20">
               <div className="Detail-label">Birthday</div>
               <div className="Detail-text">{detailObj.birthday}</div>
-              <div className="Detail-label">Favorite Snack</div>
-              <div className="Detail-text">Sample Text</div>
             </div>
           </div>
           <div className="Detail-section">
@@ -126,13 +123,11 @@ class Detail extends React.Component {
             <div className="Detail-line"></div>
             <div className="Detail-column padding-left-20">
               <div className="Detail-label">Email</div>
-              <div className="Detail-text">{"Sample Text"}</div>
-              <div className="Detail-label">Allergies</div>
-              <div className="Detail-text">{"Sample Text"}</div>
+              <div className="Detail-text">REDACTED@apartmentlist.com</div>
             </div>
             <div className="Detail-column padding-left-20">
               <div className="Detail-label">Phone Number</div>
-              <div className="Detail-text">Sample Text</div>
+              <div className="Detail-text">REDACTED</div>
             </div>
           </div>
         </div>
