@@ -41,8 +41,8 @@ class App extends React.Component {
               <img
                 src={Logo}
                 alt="logo"
-                width="300"
-                height="100"
+                width="200"
+                height="55"
               />
             </div>
             <div className="Home-link">
