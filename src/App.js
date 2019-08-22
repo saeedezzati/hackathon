@@ -8,6 +8,7 @@ import Quiz from './Quiz';
 import Snacks from './Snacks';
 import Detail from './Detail';
 import Categories from './Categories';
+import Logo from './Apartment_List_Logo_RGB.png';
 
 class App extends React.Component {
   constructor(props) {
@@ -37,7 +38,12 @@ class App extends React.Component {
         <div className="App-header-wrapper">
           <div className="App-header">
             <div className="Home-link" onClick={() => this.setState({ section: "categories" })}>
-              Home
+              <img
+                src={Logo}
+                alt="logo"
+                width="300"
+                height="100"
+              />
             </div>
             {section === "people" &&
               <input autofocus="true" placeholder="Search" className="Search-box" value={search} onChange={e => this.setState({ search: e.target.value })}/>
