@@ -52,3 +52,6 @@
   cursor: pointer;
   border: 2px solid purple;
 }
+  .Section span {
+    margin-bottom: 9px;
+  }

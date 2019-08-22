@@ -18,8 +18,6 @@
   display: flex;
   width: 100%;
   justify-content: center;
-  background-color: #f2f2f2;
-
 }
 .App-header {
   height: 40px;
@@ -29,6 +27,7 @@
   justify-content: space-between;
   font-size: 20px;
   padding: 15px 24px;
+  border-bottom: solid 1px #e6e6e6;
 }
 
 .Home-link{
