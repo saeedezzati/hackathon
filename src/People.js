@@ -35,10 +35,10 @@ class People extends React.Component {
         </div>
         <div>
           <input
-            autofocus="true" 
-            placeholder="Search" 
-            className="Search-box" 
-            value={search} 
+            autoFocus={true}
+            placeholder="Search"
+            className="Search-box"
+            value={search}
             onChange={e => this.setState({ search: e.target.value })}
           />
         </div>

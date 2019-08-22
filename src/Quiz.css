@@ -27,7 +27,8 @@
 
 .Quiz-button {
   width: 161px;
-  height: 68px;
+  min-height: 68px;
+  max-height:168px;
   /* line-height: 68px; */
   display: flex;
   align-items: center;

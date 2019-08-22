@@ -40,6 +40,7 @@
 
 .Detail-sidebar {
   width: 320px;
+  min-height: 638px;
   background-color: #ffffff;
   text-align: left;
   margin-top: 50px;

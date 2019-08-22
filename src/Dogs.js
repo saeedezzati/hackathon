@@ -32,7 +32,7 @@ class Dogs extends React.Component {
         <div className="Dog-details">
           {dogList.map(dog => {
             return (
-              <div className="Dog-box" onClick={handleClickSection("detail", dog)}>
+              <div className="Dog-box" onClick={handleClickSection("dog-detail", dog)}>
                 <img className="Dog-img" alt="doggies!" src={dog.profilePhoto}></img>
                 <div className="Dog-info">
                   <div className ="Dog-info-header">
