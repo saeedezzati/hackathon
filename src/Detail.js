@@ -31,7 +31,7 @@ class Detail extends React.Component {
     console.log("photos", photoArray);
     images = photoArray.map((url) => {
       return (
-        <div className="margin-top-10" onClick={handleClickSection("dog-detail", person)}> 
+        <div className="margin-top-10"> 
           <img
             className="Detail-img margin-left-right-10"
             src={url}
