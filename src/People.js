@@ -35,7 +35,7 @@ class People extends React.Component {
         </div>
         <div>
           <input
-            autofocus="true" 
+            autoFocus={true} 
             placeholder="Search" 
             className="Search-box" 
             value={search} 

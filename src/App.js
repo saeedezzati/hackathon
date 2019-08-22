@@ -94,11 +94,12 @@ class App extends React.Component {
         {section === "snacks" &&
           <Snacks handleClickSection={this.handleClickSection} />
         }
-        {section === "detail" &&
+        {(section === "detail" || section === "dog-detail") &&
           <Detail 
             handleClickSection={this.handleClickSection} 
             handleClickGroup={this.handleClickGroup}
             detailObj={data} 
+            section={section}
 
           />
         }

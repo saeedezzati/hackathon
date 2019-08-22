@@ -39,7 +39,7 @@ class Quiz extends React.Component {
         var randomAnswers = [];
         while (randomEmployeeIndexes.length < 4) {
           var randomAnswer = this.returnRandomAnswer(numQ, this.state.quizList);
-          if (randomAnswer && randomAnswers.indexOf(randomAnswer.employeeAnswer) == -1) { // ie is not blank and answer isn't already in this set
+          if (randomAnswer && randomAnswers.indexOf(randomAnswer.employeeAnswer) === -1) { // ie is not blank and answer isn't already in this set
             randomEmployeeIndexes.push(randomAnswer.randomEmployeeNumber);
             randomAnswers.push(randomAnswer.employeeAnswer);
           }
@@ -88,7 +88,7 @@ class Quiz extends React.Component {
       <div className="Quiz">
         {quizList.length > 0 && 
           <React.Fragment>
-            <img className="Quiz-image" src= {employeeList[employeeNumber].image}></img>
+            <img className="Quiz-image" src={employeeList[employeeNumber].image} alt="employee"></img>
             <h1>Let's learn more about {employeeList[employeeNumber].name}</h1>
             <div className = "Quiz-question" >{quizList[numQ].questionTextPart1 + employeeList[employeeNumber].name.split(' ')[0] + quizList[numQ].questionTextPart2 }</div>
             <div className = "Quiz-answers">
