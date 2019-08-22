@@ -45,8 +45,32 @@ class App extends React.Component {
                 height="100"
               />
             </div>
+            <div className="Home-link">
+              <div className="App-header-link" onClick={() => this.setState({ section: "people" })}>
+                People
+              </div>
+              <div className="App-header-link" onClick={() => this.setState({ section: "dogs" })}>
+                Dogs
+              </div>
+              <div className="App-header-link" onClick={() => this.setState({ section: "groups" })}>
+                Groups
+              </div>
+              <div className="App-header-link" onClick={() => this.setState({ section: "snacks" })}>
+                Snacks
+              </div>
+              <div className="App-header-link" onClick={() => this.setState({ section: "quiz" })}>
+                Quiz
+              </div>
+            </div>
             {section === "people" &&
-              <input autofocus="true" placeholder="Search" className="Search-box" value={search} onChange={e => this.setState({ search: e.target.value })}/>
+              <input
+                className="Home-link" 
+                autofocus="true" 
+                placeholder="Search" 
+                className="Search-box" 
+                value={search} 
+                onChange={e => this.setState({ search: e.target.value })}
+              />
             }
           </div>
         </div>
