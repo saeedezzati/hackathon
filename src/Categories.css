@@ -43,6 +43,9 @@
   border: 2px solid #f2f2f2;
   border-radius: 5px;
 }
+.Section-link{
+  text-decoration: none;
+}
 .Section:hover {
   cursor: pointer;
   border: 2px solid purple;

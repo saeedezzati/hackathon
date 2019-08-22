@@ -36,12 +36,14 @@ class Categories extends React.Component {
             </span>
             Groups
           </div>
-          <div className="Section" onClick={handleClickSection("events")}>
-            <span aria-label='events' role='img'>
-              📆️
-            </span>
-            Events
-          </div>
+          <a href="https://sites.google.com/apartmentlist.com/wiki/calendar?authuser=0" target="_blank" rel="noopener noreferrer" className="Section-link">
+              <div className="Section">
+                <span aria-label='events' role='img'>
+                  📆️
+                </span>
+                Events
+              </div>
+            </a>
           <div className="Section" onClick={handleClickSection("quiz")}>
             <span aria-label='quiz' role='img'>
               💡

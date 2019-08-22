@@ -8,6 +8,7 @@ import Quiz from './Quiz';
 import Snacks from './Snacks';
 import Detail from './Detail';
 import Categories from './Categories';
+import Logo from './Apartment_List_Logo_RGB.png';
 
 class App extends React.Component {
   constructor(props) {
@@ -15,7 +16,8 @@ class App extends React.Component {
     this.state = {
       section: "categories",
       data: "",
-      search: ""
+      search: "",
+      group:""
     }
   }
 
@@ -23,30 +25,65 @@ class App extends React.Component {
   }
   handleClickSection = (section, data = "") => () => {
     console.log("section: ", section, "data: ", data);
-    this.setState({ section, data })
+    this.setState({ section, data, search:"", group: "" })
+  }
+
+  handleClickGroup = (section, group) => {
+    this.setState({ section, group });
   }
   render() {
-    const { section, data, search } = this.state;
+    const { section, data, search, group } = this.state;
     return (
       <div className="App">
         <div className="App-header-wrapper">
           <div className="App-header">
             <div className="Home-link" onClick={() => this.setState({ section: "categories" })}>
-              Home
+              <img
+                src={Logo}
+                alt="logo"
+                width="200"
+                height="55"
+              />
             </div>
-            {section === "people" &&
-              <input placeholder="Search" className="Search-box" value={search} onChange={e => this.setState({ search: e.target.value })}/>
-            }
+            <div className="Home-link">
+              <div className="App-header-link" onClick={() => this.setState({ section: "people" })}>
+                People
+              </div>
+              <div className="App-header-link" onClick={() => this.setState({ section: "dogs" })}>
+                Dogs
+              </div>
+              <div className="App-header-link" onClick={() => this.setState({ section: "groups" })}>
+                Groups
+              </div>
+              <div className="App-header-link" onClick={() => this.setState({ section: "snacks" })}>
+                Snacks
+              </div>
+              <div className="App-header-link" onClick={() => this.setState({ section: "quiz" })}>
+                Quiz
+              </div>
+            </div>
+            {/* {section === "people" &&
+              <input
+                className="Home-link" 
+                autofocus="true" 
+                placeholder="Search" 
+                className="Search-box" 
+                value={search} 
+                onChange={e => this.setState({ search: e.target.value })}
+              />
+            } */}
           </div>
         </div>
         {section === "people" &&
-          <People handleClickSection={this.handleClickSection} search={search}/>
+          <People handleClickSection={this.handleClickSection} search={search} group={group}/>
         }
         {section === "dogs" &&
           <Dogs handleClickSection={this.handleClickSection} />
         }
         {section === "groups" &&
-          <Groups handleClickSection={this.handleClickSection} />
+          <Groups handleClickSection={this.handleClickSection}
+          handleClickGroup={this.handleClickGroup}
+          />
         }
         {section === "events" &&
           <Events handleClickSection={this.handleClickSection} />
@@ -58,7 +95,12 @@ class App extends React.Component {
           <Snacks handleClickSection={this.handleClickSection} />
         }
         {section === "detail" &&
-          <Detail handleClickSection={this.handleClickSection} detailObj={data} />
+          <Detail 
+            handleClickSection={this.handleClickSection} 
+            handleClickGroup={this.handleClickGroup}
+            detailObj={data} 
+
+          />
         }
         {section === "categories" &&
           <Categories handleClickSection={this.handleClickSection} />

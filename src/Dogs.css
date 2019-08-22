@@ -81,30 +81,30 @@
       border: solid 2px #8333d6;
     }
 
-      img {
-        width: 275px;
-        height: 265px;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        object-fit: cover;
-      }
+    .Dog-img {
+      width: 275px;
+      height: 265px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      object-fit: cover;
+    }
+    
+    .Dog-info {
+      display: flex;
+      flex-direction: column;
+    }
       
-      .Dog-info {
+      .Dog-info-header {
+        margin-top: 10px;
+        padding: 0px 16px;
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
       }
-        
-        .Dog-info-header {
-          margin-top: 10px;
-          padding: 0px 16px;
-          display: flex;
-          justify-content: space-between;
-        }
 
-        .Dog-owner {
-          padding: 0px 16px;
-          text-align: left;
-        }
+      .Dog-owner {
+        padding: 0px 16px;
+        text-align: left;
+      }
   
   @keyframes Dog-logo-spin {
     from {

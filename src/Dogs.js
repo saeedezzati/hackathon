@@ -1,3 +1,4 @@
+
 import React from 'react';
 import './Dogs.css';
 
@@ -32,7 +33,7 @@ class Dogs extends React.Component {
           {dogList.map(dog => {
             return (
               <div className="Dog-box" onClick={handleClickSection("detail", dog)}>
-                <img alt="doggies!" src={dog.profilePhoto}></img>
+                <img className="Dog-img" alt="doggies!" src={dog.profilePhoto}></img>
                 <div className="Dog-info">
                   <div className ="Dog-info-header">
                     <span>{dog.dogName}</span>

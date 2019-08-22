@@ -8,6 +8,29 @@
   padding-left: 20px;
 }
 
+.margin-top-10 {
+  margin-top: 10px;
+}
+
+.margin-left-right-10 {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.Min-max-width {
+  max-width: 1000px;
+  min-width: 800px;
+}
+
+.width-172 {
+  width: 172px;
+}
+
+.flex-parent {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .Detail-logo {
   animation: Detail-logo-spin infinite 20s linear;
   height: 40vmin;
@@ -64,7 +87,6 @@
 }
 .Detail-name {
   width: 214px;
-  height: 39px;
   font-family: HelveticaNeue;
   font-size: 30px;
   font-weight: 500;
@@ -72,6 +94,7 @@
   font-stretch: normal;
   line-height: normal;
   letter-spacing: normal;
+  overflow: hidden;
   color: #333333;
 }
 
@@ -98,10 +121,24 @@
   color: #333333;
 }
 
-.Detail-person-img {
+.Detail-img {
   border-radius: 50%;
   border: 1px solid grey;
-  margin-top: 10px;
+}
+
+.Detail-ttma {
+  width: 116px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: #EEE6F6;
+  flex: 1 0 21%; /* Only enough space for 4 items */
+  margin: 5px;
+  text-align: center;
+  line-height: 30px;
+}
+
+.Detail-ttma:hover {
+  cursor: pointer;
 }
 
 .Detail-person-info {
