@@ -8,6 +8,24 @@
   padding-left: 20px;
 }
 
+.margin-top-10 {
+  margin-top: 10px;
+}
+
+.margin-left-right-10 {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.Min-max-width {
+  max-width: 1000px;
+  min-width: 800px;
+}
+
+.width-172 {
+  width: 172px;
+}
+
 .flex-parent {
   display: flex;
   flex-wrap: wrap;
@@ -103,10 +121,9 @@
   color: #333333;
 }
 
-.Detail-person-img {
+.Detail-img {
   border-radius: 50%;
   border: 1px solid grey;
-  margin-top: 10px;
 }
 
 .Detail-ttma {
