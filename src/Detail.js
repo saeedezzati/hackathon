@@ -24,9 +24,11 @@ class Detail extends React.Component {
   }
 
   getPetPictures = () => {
-    const photoArray = this.props.detailObj.petPhotos.split(", ");
+    let images = [];
+    if (this.props.detailObj.petPhotos) {
+    let photoArray = this.props.detailObj.petPhotos.split(", ");
     console.log("photos", photoArray);
-    const images = photoArray.map((url) => {
+    images = photoArray.map((url) => {
       return (
         <img
           src={url}
@@ -36,6 +38,7 @@ class Detail extends React.Component {
         />
       )
     });
+    }
     return images;
   }
 
@@ -130,7 +133,16 @@ class Detail extends React.Component {
             </div>
           </div>
         </div>
-        
+        <div className="Detail-info">
+          <div className="Detail-section">
+            <div className="Detail-header padding-left-20">Pets</div>
+            <div className="Detail-line"></div>
+            <div>
+          {this.getPetPictures()}
+        </div>
+          </div>
+          
+        </div>
         {/* <div>Pets</div>
         <div>
           {this.getPetPictures()}
