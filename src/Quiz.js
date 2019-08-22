@@ -19,29 +19,33 @@ class Quiz extends React.Component {
     await fetch('https://api.sheety.co/3766fdfb-2ab0-4b9b-b56f-e484da8ca106')
     .then(response => response.json())
     .then(data => {
-      this.setState({ employeeList: data })});
+      this.setState({ employeeList: data })
+    });
 
     await fetch('https://api.sheety.co/65a4c11b-dab7-40ae-8ee7-58aeb2240f5d')
       .then(response => response.json())
       .then(data => {
-        const numQ = Math.floor(Math.random() * data.length);
-        // Pick a number, if it corresponds to an answer, and doesn't already exist in array, add the index to randomEmployeeIndexes, and the answer 
-        // to the randomized answers
-        var randomEmployeeIndexes = [];
+        this.setState({quizList: data});
+        this.resetQuiz();
+  })};
+
+  resetQuiz = () => {
+    const numQ = Math.floor(Math.random() * this.state.quizList.length);
+    const correctA = Math.floor(Math.random() * 4);
+
+    // Pick a number, if it corresponds to an answer, and doesn't already exist in array, add the index to randomEmployeeIndexes, and the answer 
+    // to the randomized answers
+    var randomEmployeeIndexes = [];
         var randomAnswers = [];
         while (randomEmployeeIndexes.length < 4) {
-          var randomAnswer = this.returnRandomAnswer(numQ, data);
+          var randomAnswer = this.returnRandomAnswer(numQ, this.state.quizList);
           if (randomAnswer && randomAnswers.indexOf(randomAnswer.employeeAnswer) == -1) { // ie is not blank and answer isn't already in this set
             randomEmployeeIndexes.push(randomAnswer.randomEmployeeNumber);
             randomAnswers.push(randomAnswer.employeeAnswer);
           }
         }
-        // const randomEmployeeIndexes = [Math.floor(Math.random() * Object.keys(data[0]).length), Math.floor(Math.random() * Object.keys(data[0]).length), Math.floor(Math.random() * Object.keys(data[0]).length), Math.floor(Math.random() * Object.keys(data[0]).length)];
-        // const randomAnswers = randomEmployeeIndexes.map(element => data[numQ]["e"+element]);
-        const correctA = Math.floor(Math.random() * 4);
-        const employeeNumber = randomEmployeeIndexes[correctA];
-        this.setState({ quizList: data, numQ: numQ, correctAnswer: correctA + 1, randomAnswers: randomAnswers, employeeNumber: employeeNumber })});
-
+    const employeeNumber = randomEmployeeIndexes[correctA];
+    this.setState({ numQ: numQ, correctAnswer: correctA + 1, randomAnswers: randomAnswers, employeeNumber: employeeNumber, chosenAnswer: 0 });
   }
 
   returnRandomAnswer = (numQ, data) => {
@@ -69,6 +73,14 @@ class Quiz extends React.Component {
     const { employeeList } = this.state;
     const { randomAnswers } = this.state;
     const { employeeNumber } = this.state;
+    const correctFeedback = [
+      'Lucky guess!',
+      "Let's see if you get the next one..."
+    ];
+    const wrongFeedback = [
+      'You only had one job! - Gabby',
+      'Does friendship mean anything to you? - Gabby'
+    ];
     
     console.log(this.state);
 
@@ -76,6 +88,7 @@ class Quiz extends React.Component {
       <div className="Quiz">
         {quizList.length > 0 && 
           <React.Fragment>
+            <img className="Quiz-image" src= {employeeList[employeeNumber].image}></img>
             <h1>Let's learn more about {employeeList[employeeNumber].name}</h1>
             <div className = "Quiz-question" >{quizList[numQ].questionTextPart1 + employeeList[employeeNumber].name.split(' ')[0] + quizList[numQ].questionTextPart2 }</div>
             <div className = "Quiz-answers">
@@ -92,6 +105,8 @@ class Quiz extends React.Component {
                 {randomAnswers[3]}
               </div>
             </div>
+            <div className = {chosenAnswer !== 0 && chosenAnswer === correctAnswer ? 'Quiz-feedback correct' : ( chosenAnswer !== 0 ? 'Quiz-feedback wrong' : 'Quiz-feedback') }>{chosenAnswer !== 0 && chosenAnswer === correctAnswer ? correctFeedback[Math.floor(Math.random() * correctFeedback.length)] : ( chosenAnswer !== 0 ? wrongFeedback[Math.floor(Math.random() * wrongFeedback.length)] : '') }</div>
+            <div className = {chosenAnswer !== 0 && chosenAnswer === correctAnswer ? 'Quiz-next active' : 'Quiz-next' } onClick={this.resetQuiz}>Next</div>
           </React.Fragment>
         }
       </div>
