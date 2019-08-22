@@ -62,7 +62,7 @@ class App extends React.Component {
                 Quiz
               </div>
             </div>
-            {section === "people" &&
+            {/* {section === "people" &&
               <input
                 className="Home-link" 
                 autofocus="true" 
@@ -71,7 +71,7 @@ class App extends React.Component {
                 value={search} 
                 onChange={e => this.setState({ search: e.target.value })}
               />
-            }
+            } */}
           </div>
         </div>
         {section === "people" &&
