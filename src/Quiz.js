@@ -75,11 +75,19 @@ class Quiz extends React.Component {
     const { employeeNumber } = this.state;
     const correctFeedback = [
       'Lucky guess!',
-      "Let's see if you get the next one..."
+      "Let's see if you get the next one...",
+      'I guess that was an easy one 🤷‍',
+      'Keep it up!',
+      "Even my grandma would have gotten that one right",
+      "Good one!"
     ];
     const wrongFeedback = [
-      'You only had one job! - Gabby',
-      'Does friendship mean anything to you? - Gabby'
+      'You only had one job!',
+      'Does friendship mean anything to you?',
+      "You should know this!",
+      "It can't get any easier than multiple choice answers!",
+      "Oh, come on!",
+      "Please try harder"
     ];
     
     console.log(this.state);

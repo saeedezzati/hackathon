@@ -33,6 +33,7 @@
 .Section {
   flex-direction: column;
   background-color: #f2f2f2;
+  color: black;
   width: 200px;
   height: 150px;
   display: flex;
