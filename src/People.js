@@ -23,7 +23,7 @@ class People extends React.Component {
 
     const filteredPeopleList = peopleList.length > 0
       ? peopleList.filter(person =>
-        [person.name, person.title, person.department, person.workLocation, person.mostUsedEmoji].join(",").toLowerCase().includes(search)
+        [person.name, person.title, person.department, person.workLocation, person.mostUsedEmoji].join(",").toLowerCase().includes(search.toLowerCase())
       ).filter(person =>
         group === "" || (person.talkToMeAbout && person.talkToMeAbout.toLowerCase().includes(group.toLowerCase()))
       )
