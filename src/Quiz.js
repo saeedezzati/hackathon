@@ -31,7 +31,7 @@ class Quiz extends React.Component {
         var randomAnswers = [];
         while (randomEmployeeIndexes.length < 4) {
           var randomAnswer = this.returnRandomAnswer(numQ, data);
-          if (randomAnswer && randomAnswers.indexOf(randomAnswer.employeeAnswer) == -1) { // ie is not blank and answer isn't already in this set
+          if (randomAnswer && randomAnswers.indexOf(randomAnswer.employeeAnswer) === -1) { // ie is not blank and answer isn't already in this set
             randomEmployeeIndexes.push(randomAnswer.randomEmployeeNumber);
             randomAnswers.push(randomAnswer.employeeAnswer);
           }
