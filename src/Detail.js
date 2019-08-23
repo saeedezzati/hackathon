@@ -46,10 +46,48 @@ class Detail extends React.Component {
     return images;
   }
 
+  getAboutInfo = () => {
+    const { detailObj } = this.props;
+    const info = [
+      {label: "Hometown", accessor: "hometown"},
+      {label: "Birthday", accessor: "birthday"}, 
+      {label: "Does Pineapple Belong On Pizza", accessor: "doesPineappleBelongOnPizza"}, 
+      {label: "Favorite Fast Food", accessor: "favoriteFastFood"}, 
+      {label: "Favorite Snack", accessor: "favoriteSnack"}, 
+      {label: "Favourite TV Show", accessor: "favouriteTVShow"}, 
+      {label: "Hidden Talent", accessor: "hiddenTalent"}, 
+      {label: "Hottest Hot Take", accessor: "hottestHotTake"}, 
+      {label: "Languages Spoken", accessor: "languagesSpoken"}, 
+      {label: "Most Controversial Opinion", accessor: "mostControversialOpinion"}, 
+      {label: "Musical Instrument", accessor: "musicalInstrument"}, 
+      {label: "Taco Bell", accessor: "tacoBell"}, 
+      {label: "What Is Your Favorite Potato", accessor: "whatIsYourFavoritePotato"},
+      {label: "Which Actor Would You Choose To Play The Role Of You In A Movie", accessor: "whichActorWouldYouChooseToPlayTheRoleOfYouInAMovie"},
+      {label: "Which Character Would You Want To Be", accessor: "whichCharacterWouldYouWantToBe"}
+    ];
+
+    const filteredDetail = info.filter((detail) => {
+      return detailObj[detail.accessor] !== null
+    });
+    console.log("filtered", filteredDetail);
+    const aboutElements = filteredDetail.map((detail) => {
+      return (
+        <div 
+          className="Detail-about"
+        >
+          <div className="Detail-label">{detail.label}</div>
+          <div className="Detail-text">{detailObj[detail.accessor]}</div>
+        </div>
+      )
+    })
+    return aboutElements;
+  }
+
   render() {
     const { detailObj, section } = this.props;
     console.log("details props", this.props.detailObj.petPhotos);
     const ttma = this.getCSV("talkToMeAbout");
+    this.getAboutInfo();
     const ttmaElements = ttma.map((group) => {
       return (
         <div 
@@ -62,6 +100,8 @@ class Detail extends React.Component {
         </div>
       )
     });
+
+    const aboutElements = this.getAboutInfo();
     return (
       <div className="Detail">
         <div className="Detail-sidebar">
@@ -111,48 +151,19 @@ class Detail extends React.Component {
             <div className="Detail-section">
               <div className="Detail-header padding-left-20">About</div>
               <div className="Detail-line"/>
-              <div className="Detail-column padding-left-20">
-                <div className="Detail-label">I'm Traveling To</div>
-                <div className="Detail-text">{"Sample Text"}</div>
-                <div className="Detail-label">Hometown</div>
-                <div className="Detail-text">{detailObj.hometown}</div>
-              </div>
-              <div className="Detail-column padding-left-20">
-                <div className="Detail-label">Favorite TV Show</div>
-                <div className="Detail-text">{detailObj.favouriteTVShow}</div>
-                <div className="Detail-label">Who Would Play You In A Movie</div>
-                <div className="Detail-text">{"Sample Text"}</div>
-              </div>
+              <div className="flex-parent padding-left-20">{aboutElements}</div>
             </div>
             <div className="Detail-section">
               <div className="Detail-header padding-left-20">Talk To Me About</div>
               <div className="Detail-line"></div>
-              <div className="flex-parent">{ttmaElements}</div>
-            </div>
-            <div className="Detail-section">
-              <div className="Detail-header padding-left-20">Office Info</div>
-              <div className="Detail-line"></div>
-              <div className="Detail-column padding-left-20">
-                <div className="Detail-label">Favorite Food</div>
-                <div className="Detail-text">Sample Text</div>
-                <div className="Detail-label">Allergies</div>
-                <div className="Detail-text">Sample Text</div>
-              </div>
-              <div className="Detail-column padding-left-20">
-                <div className="Detail-label">Birthday</div>
-                <div className="Detail-text">{detailObj.birthday}</div>
-                <div className="Detail-label">Favorite Snack</div>
-                <div className="Detail-text">Sample Text</div>
-              </div>
+              <div className="flex-parent padding-left-20">{ttmaElements}</div>
             </div>
             <div className="Detail-section">
               <div className="Detail-header padding-left-20">Contact Info</div>
               <div className="Detail-line"></div>
               <div className="Detail-column padding-left-20">
                 <div className="Detail-label">Email</div>
-                <div className="Detail-text">{"Sample Text"}</div>
-                <div className="Detail-label">Allergies</div>
-                <div className="Detail-text">{"Sample Text"}</div>
+                <div className="Detail-text">{"email@email.com"}</div>
               </div>
               <div className="Detail-column padding-left-20">
                 <div className="Detail-label">Phone Number</div>

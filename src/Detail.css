@@ -27,8 +27,10 @@
 }
 
 .flex-parent {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 160px 160px 160px 160px;
+  grid-column-gap: 10px;
+  justify-items: center;
 }
 
 .Detail-logo {
@@ -134,15 +136,22 @@
   margin-bottom: 7px;
 }
 
-.Detail-ttma {
-  width: 116px;
-  height: 30px;
+.Detail-about {
   border-radius: 4px;
-  background-color: #EEE6F6;
-  flex: 1 0 21%; /* Only enough space for 4 items */
   margin: 5px;
   text-align: center;
-  line-height: 30px;
+  /* line-height: 30px; */
+}
+
+.Detail-ttma {
+  min-width: 160px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: #EEE6F6;
+  /* flex: 1 0 21%; Only enough space for 4 items */
+  margin: 5px;
+  text-align: center;
+  line-height: 40px;
 }
 
 .Detail-ttma:hover {
