@@ -130,7 +130,7 @@ class Detail extends React.Component {
             <div className="Detail-text">{detailObj.title}</div>
             <div className="Detail-label">Department</div>
             <div className="Detail-text">{detailObj.department}</div>
-            <div className="Detail-label">Tenure</div>
+            <div className="Detail-label">More tenured than</div>
             <div className="Detail-text">{detailObj.tenure}</div>
             <div className="Detail-label">Office Location</div>
             <div className="Detail-text">{detailObj.workLocation}</div>
@@ -149,23 +149,23 @@ class Detail extends React.Component {
         {section === "detail" && 
           <React.Fragment>
             <div className="Detail-section">
-              <div className="Detail-header padding-left-20">About</div>
+              <div className="Detail-header">About</div>
               <div className="Detail-line"/>
               <div className="flex-parent padding-left-20">{aboutElements}</div>
             </div>
             <div className="Detail-section">
-              <div className="Detail-header padding-left-20">Talk To Me About</div>
+              <div className="Detail-header">Talk To Me About</div>
               <div className="Detail-line"></div>
               <div className="flex-parent padding-left-20">{ttmaElements}</div>
             </div>
             <div className="Detail-section">
-              <div className="Detail-header padding-left-20">Contact Info</div>
+              <div className="Detail-header">Contact Info</div>
               <div className="Detail-line"></div>
-              <div className="Detail-column padding-left-20">
+              <div className="Detail-column">
                 <div className="Detail-label">Email</div>
                 <div className="Detail-text">{"email@email.com"}</div>
               </div>
-              <div className="Detail-column padding-left-20">
+              <div className="Detail-column">
                 <div className="Detail-label">Phone Number</div>
                 <div className="Detail-text">Sample Text</div>
               </div>
@@ -175,9 +175,9 @@ class Detail extends React.Component {
         {section === "dog-detail" && 
           <React.Fragment>
             <div className="Detail-section">
-              <div className="Detail-header padding-left-20">About</div>
+              <div className="Detail-header">About</div>
               <div className="Detail-line"/>
-              <div className="Detail-column padding-left-20">
+              <div className="Detail-column">
                 <div className="Detail-label">Breed</div>
                 <div className="Detail-text">{detailObj.breed}</div>
                 <div className="Detail-label">Favorite Snack</div>
@@ -185,7 +185,7 @@ class Detail extends React.Component {
                 <div className="Detail-label">Tricks</div>
                 <div className="Detail-text">{detailObj.tricks}</div>
               </div>
-              <div className="Detail-column padding-left-20">
+              <div className="Detail-column">
                 <div className="Detail-label">Age</div>
                 <div className="Detail-text">{detailObj.age}</div>
                 <div className="Detail-label">Scratch Sweet Spots</div>
@@ -194,18 +194,18 @@ class Detail extends React.Component {
                 <div className="Detail-text">{detailObj.hometown}</div>
               </div>
             </div>
-            <div className="Detail-section">
-              <div className="Detail-header padding-left-20">Fav Friendos</div>
+            {/* <div className="Detail-section">
+              <div className="Detail-header">Fav Friendos</div>
               <div className="Detail-line"></div>
               <div className="flex-parent">{"Dog1, Dog2, Dog3, Dog4"}</div>
-            </div>
+            </div> */}
           </React.Fragment>
         }
         </div>
         { section === "detail" && this.props.detailObj.petPhotos !== null &&
-            <div className="Detail-info width-172">
+            <div className="Detail-info col3">
               <div className="Detail-section">
-                <div className="Detail-header padding-left-20">Pets</div>
+                <div className="Detail-header">Pets</div>
                 <div className="Detail-line"></div>
                 <div>
                   {this.getPetPictures()}
