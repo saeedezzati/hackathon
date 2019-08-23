@@ -109,15 +109,15 @@ class Detail extends React.Component {
         {section === "detail" && 
           <React.Fragment>
             <div className="Detail-section">
-              <div className="Detail-header padding-left-20">About</div>
+              <div className="Detail-header">About</div>
               <div className="Detail-line"/>
-              <div className="Detail-column padding-left-20">
+              <div className="Detail-column">
                 <div className="Detail-label">I'm Traveling To</div>
                 <div className="Detail-text">{"Sample Text"}</div>
                 <div className="Detail-label">Hometown</div>
                 <div className="Detail-text">{detailObj.hometown}</div>
               </div>
-              <div className="Detail-column padding-left-20">
+              <div className="Detail-column">
                 <div className="Detail-label">Favorite TV Show</div>
                 <div className="Detail-text">{detailObj.favouriteTVShow}</div>
                 <div className="Detail-label">Who Would Play You In A Movie</div>
@@ -125,20 +125,20 @@ class Detail extends React.Component {
               </div>
             </div>
             <div className="Detail-section">
-              <div className="Detail-header padding-left-20">Talk To Me About</div>
+              <div className="Detail-header">Talk To Me About</div>
               <div className="Detail-line"></div>
               <div className="flex-parent">{ttmaElements}</div>
             </div>
             <div className="Detail-section">
-              <div className="Detail-header padding-left-20">Office Info</div>
+              <div className="Detail-header">Office Info</div>
               <div className="Detail-line"></div>
-              <div className="Detail-column padding-left-20">
+              <div className="Detail-column">
                 <div className="Detail-label">Favorite Food</div>
                 <div className="Detail-text">Sample Text</div>
                 <div className="Detail-label">Allergies</div>
                 <div className="Detail-text">Sample Text</div>
               </div>
-              <div className="Detail-column padding-left-20">
+              <div className="Detail-column">
                 <div className="Detail-label">Birthday</div>
                 <div className="Detail-text">{detailObj.birthday}</div>
                 <div className="Detail-label">Favorite Snack</div>
@@ -146,15 +146,15 @@ class Detail extends React.Component {
               </div>
             </div>
             <div className="Detail-section">
-              <div className="Detail-header padding-left-20">Contact Info</div>
+              <div className="Detail-header">Contact Info</div>
               <div className="Detail-line"></div>
-              <div className="Detail-column padding-left-20">
+              <div className="Detail-column">
                 <div className="Detail-label">Email</div>
                 <div className="Detail-text">{"Sample Text"}</div>
                 <div className="Detail-label">Allergies</div>
                 <div className="Detail-text">{"Sample Text"}</div>
               </div>
-              <div className="Detail-column padding-left-20">
+              <div className="Detail-column">
                 <div className="Detail-label">Phone Number</div>
                 <div className="Detail-text">Sample Text</div>
               </div>
