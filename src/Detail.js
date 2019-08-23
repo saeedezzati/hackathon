@@ -90,7 +90,7 @@ class Detail extends React.Component {
             <div className="Detail-text">{detailObj.title}</div>
             <div className="Detail-label">Department</div>
             <div className="Detail-text">{detailObj.department}</div>
-            <div className="Detail-label">Tenure</div>
+            <div className="Detail-label">More tenured than</div>
             <div className="Detail-text">{detailObj.tenure}</div>
             <div className="Detail-label">Office Location</div>
             <div className="Detail-text">{detailObj.workLocation}</div>
@@ -183,11 +183,11 @@ class Detail extends React.Component {
                 <div className="Detail-text">{detailObj.hometown}</div>
               </div>
             </div>
-            <div className="Detail-section">
+            {/* <div className="Detail-section">
               <div className="Detail-header">Fav Friendos</div>
               <div className="Detail-line"></div>
               <div className="flex-parent">{"Dog1, Dog2, Dog3, Dog4"}</div>
-            </div>
+            </div> */}
           </React.Fragment>
         }
         </div>

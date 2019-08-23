@@ -58,6 +58,10 @@
     border-radius: 50%;
   }
 
+  .col3 img:first-of-type {
+    margin-top: 24px;
+  }
+
 .Detail-section {
   background-color: #ffffff;
   text-align: left;
