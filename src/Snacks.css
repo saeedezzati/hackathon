@@ -32,6 +32,7 @@
 
 .Snack-box:hover{
   border: 2px solid purple;
+  cursor: pointer;
 }
 
 .Submit-snack{
@@ -42,5 +43,5 @@
   height: 50px;
   line-height: 50px;
   margin: 20px;
-
+  cursor: pointer;
 }
