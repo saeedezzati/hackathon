@@ -14,12 +14,9 @@
 }
 
 .Min-max-width {
-  max-width: 1000px;
-  min-width: 800px;
-}
-
-.width-172 {
-  width: 172px;
+  /* max-width: 1000px; */
+  min-width: 600px;
+  width: 60%;
 }
 
 .flex-parent {
@@ -55,17 +52,25 @@
   padding-bottom: 24px;
 }
 
+  .col3 img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+
 .Detail-section {
   background-color: #ffffff;
   text-align: left;
   overflow: hidden;
   padding: 0px 24px 24px;
   margin-bottom: 32px;
+  border-radius: 10px;
 }
 
 .Detail-column {
   float: left;
-  padding-right: 20px;
+  /* padding-right: 20px; */
+  width: 50%;
 }
 
 .Detail-header {
@@ -141,6 +146,7 @@
   margin: 5px;
   text-align: center;
   line-height: 30px;
+  min-width: 200px;
 }
 
 .Detail-ttma:hover {
