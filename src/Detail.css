@@ -39,12 +39,13 @@
 }
 
 .Detail-sidebar {
-  width: 320px;
-  min-height: 638px;
+  width: calc(350px - 64px);
+  /* min-height: 638px; */
+  height: 100vh;
   background-color: #ffffff;
   text-align: left;
-  margin-top: 50px;
-  padding: 50px 0px 50px 30px;
+  /* margin-top: 50px; */
+  padding: 0px 32px;
   float: left;
 }
 
@@ -88,10 +89,11 @@
   border: solid 3px #fee7dd;
 }
 .Detail-name {
-  width: 214px;
+  margin-top: 45px;
+  margin-bottom: 25px;
   font-family: HelveticaNeue;
   font-size: 30px;
-  font-weight: 500;
+  font-weight: 600;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
@@ -102,19 +104,20 @@
 
 .Detail-label {
   font-family: HelveticaNeue;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
   letter-spacing: 1px;
-  padding: 10px 0px 10px 0px;
+  margin-top: 32px;
   color: #333333;
+  text-transform: uppercase;
 }
 
 .Detail-text {
   font-family: HelveticaNeue;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
@@ -124,8 +127,11 @@
 }
 
 .Detail-img {
-  border-radius: 50%;
+  /* border-radius: 50%; */
+  border-radius: 10px;
   border: 1px solid grey;
+  width: 286px;
+  margin-bottom: 7px;
 }
 
 .Detail-ttma {
